@@ -25,15 +25,33 @@ https://stanforddailyarchive.com/cgi-bin/stanford?a=p&p=acknowledgements&e=-----
 
 */
 
-export const getNewUrl = ({query}) => {
-  return PREFIX_NEW_SITE;
+export const getNewUrl = ({a, txq, cl}) => {
+  if (a === "p") {
+    // Home page
+    return "";
+  }
+  if (a === "q") {
+    // Search page
+    if (txq) {
+      return `/search?txq=${txq}`;
+    }
+    return "/search";
+  }
+  if (a === "cl") {
+    // Calendar page
+    if (cl) {
+      const [_, year, month] = /CL2\.(\d{4})\.(\d{2})/.exec(cl);
+      return `/${year}/${month}`;
+    }
+    return "/calendar";
+  }
 }
 
 export default class extends React.Component {
     static async getInitialProps({ query, res }) {
       if (res) {
         res.writeHead(301, {
-          Location: getNewUrl({query})
+          Location: PREFIX_NEW_SITE + getNewUrl(query)
         })
         res.end()
       }
