@@ -21,7 +21,7 @@ describe("getNewUrl", () => {
     });
     test("calendar page", () => {
         const url = getNewUrl(parse("https://stanforddailyarchive.com/cgi-bin/stanford?a=cl&cl=CL2.2005.09"));
-        expect(url).toEqual("/2005/09");
+        expect(url).toEqual("/2005/09/");
     });
     test("calendar browse by date page", () => {
         const url = getNewUrl(parse("https://stanforddailyarchive.com/cgi-bin/stanford?a=cl&cl=CL2"));

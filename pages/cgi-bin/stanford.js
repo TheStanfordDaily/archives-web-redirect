@@ -50,7 +50,7 @@ export const getNewUrl = ({a, txq, cl, p, d}) => {
       }
       // Calendar month page
       const [_, year, month] = /CL2\.(\d{4})\.(\d{2})/.exec(cl);
-      return `/${year}/${month}`;
+      return `/${year}/${month}/`;
     }
     return "/calendar";
   }
