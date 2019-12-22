@@ -23,6 +23,9 @@ https://archives-web-redirect.now.sh/cgi-bin/stanford?a=p&p=home&e=-------en-20-
 Search
 https://archives-web-redirect.now.sh/cgi-bin/stanford?a=q&e=-------en-20--1--txt-txIN-a------
 
+https://archives-web-redirect.now.sh/cgi-bin/stanford?a=q&txq=leland stanford&e=-------en-20--1--txt-txIN-a------
+
+
 Calendar
 https://archives-web-redirect.now.sh/cgi-bin/stanford?a=cl&cl=CL2.1893.04&e=-------en-20--1--txt-txIN-a------
 
@@ -31,6 +34,7 @@ https://archives-web-redirect.now.sh/cgi-bin/stanford?a=cl&cl=CL2&e=-------en-20
 
 Issue PDFs
 https://archives-web-redirect.now.sh/cgi-bin/stanford?a=d&d=stanford18940501-01&e=-------en-20--1--txt-txIN-a------
+
 
 Acknowledgements
 https://archives-web-redirect.now.sh/cgi-bin/stanford?a=p&p=acknowledgements&e=-------en-20--1--txt-txIN-a------
