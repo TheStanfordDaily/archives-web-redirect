@@ -13,7 +13,7 @@ https://stanforddailyarchive.com/cgi-bin/stanford?a=q&e=-------en-20--1--txt-txI
 Calendar
 https://stanforddailyarchive.com/cgi-bin/stanford?a=cl&cl=CL2.1893.04&e=-------en-20--1--txt-txIN-a------
 
-Dates (Years)
+Browse by Date
 https://stanforddailyarchive.com/cgi-bin/stanford?a=cl&cl=CL2&e=-------en-20--1--txt-txIN-a------
 
 Issue PDFs
@@ -25,26 +25,42 @@ https://stanforddailyarchive.com/cgi-bin/stanford?a=p&p=acknowledgements&e=-----
 
 */
 
-export const getNewUrl = ({a, txq, cl}) => {
+export const getNewUrl = ({a, txq, cl, p, d}) => {
   if (a === "p") {
+    if (p === "acknowledgements") {
+      // Acknowledgements
+      return "/acknowledgements";
+    }
     // Home page
     return "";
   }
   if (a === "q") {
     // Search page
     if (txq) {
-      return `/search?txq=${txq}`;
+      return `/search?q=${txq}`;
     }
     return "/search";
   }
   if (a === "cl") {
     // Calendar page
     if (cl) {
+      if (cl === "CL2") {
+        // "Browse by date" page
+        return "/calendar";
+      }
+      // Calendar month page
       const [_, year, month] = /CL2\.(\d{4})\.(\d{2})/.exec(cl);
       return `/${year}/${month}`;
     }
     return "/calendar";
   }
+  if (a === "d") {
+    // Issue page
+    const [_, year, month, day] = /stanford(\d{4})(\d{2})(\d{2})-.*/.exec(d);
+    return `/${year}/${month}/${day}`;
+    
+  }
+  return "";
 }
 
 export default class extends React.Component {

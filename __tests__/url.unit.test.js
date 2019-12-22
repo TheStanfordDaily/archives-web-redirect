@@ -21,8 +21,26 @@ describe("getNewUrl", () => {
     });
     test("calendar page", () => {
         const url = getNewUrl(parse("https://stanforddailyarchive.com/cgi-bin/stanford?a=cl&cl=CL2.2005.09"));
-        expect(url).toEqual("/search?q=aasdasd");
+        expect(url).toEqual("/2005/09");
     });
+    test("calendar browse by date page", () => {
+        const url = getNewUrl(parse("https://stanforddailyarchive.com/cgi-bin/stanford?a=cl&cl=CL2"));
+        expect(url).toEqual("/calendar");
+    });
+    test("acknowledgements", () => {
+        const url = getNewUrl(parse("https://stanforddailyarchive.com/cgi-bin/stanford?a=p&p=acknowledgements"));
+        expect(url).toEqual("/acknowledgements");
+    });
+    test("issue page", () => {
+        const url = getNewUrl(parse("https://stanforddailyarchive.com/cgi-bin/stanford?a=d&d=stanford19990302-01"));
+        expect(url).toEqual("/1999/03/02");
+    });
+    test("single article page should redirect just to regular issue page", () => {
+        const url = getNewUrl(parse("https://stanforddailyarchive.com/cgi-bin/stanford?a=d&d=stanford19990302-01.2.16"));
+        expect(url).toEqual("/1999/03/02");
+    });
+
+    
     /*
     https://stanforddailyarchive.com/cgi-bin/stanford?a=cl&cl=CL2.1893.05
     https://stanforddailyarchive.com/cgi-bin/stanford?a=q&r=1&results=1&deq=190&e=-------en-20--1--txt-txIN-hoover------
