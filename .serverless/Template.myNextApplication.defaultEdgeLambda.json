@@ -1,0 +1,17 @@
+{
+  "name": "a13fxn9-xpvbsna",
+  "hash": "fkbsLcqyLKu1cXf4Bl7BCeXAHbF/Rw1aA/+qLxnYBww=",
+  "description": "Default Lambda@Edge for Next CloudFront distribution",
+  "memory": 512,
+  "timeout": 10,
+  "code": "/Users/epicfaace/tsd/archives-web-redirect/.serverless_nextjs/default-lambda",
+  "shims": [],
+  "handler": "index.handler",
+  "runtime": "nodejs10.x",
+  "env": {},
+  "role": {
+    "arn": "arn:aws:iam::607998788272:role/a13fxn9-955r2ue"
+  },
+  "arn": "arn:aws:lambda:us-east-1:607998788272:function:a13fxn9-xpvbsna",
+  "region": "us-east-1"
+}
