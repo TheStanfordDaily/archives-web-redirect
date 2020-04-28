@@ -12,8 +12,9 @@ Open http://localhost:3000 in your browser.
 
 ## Deployment
 
-This gets deployed using now.sh. Currently gets deployed to https://archives-web-redirect.now.sh/.
-This will eventually get deployed to https://stanforddailyarchive.com once the old site gets deactivated.
+This gets deployed using serverless-next.js to https://stanforddailyarchive.com.
+
+Deploy this site manually by running `yarn deploy`.
 
 ## Sanity check
 
